@@ -402,14 +402,13 @@ void servo_locate_mode_set(uint8_t id, int32_t location, int32_t speed)
           /* Transmission request Error */
          Error_Handler();
       }
-			delay(1000);
-
+			HAL_Delay(1);
 			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, send_message_speed, &TxMailbox) != HAL_OK)
       {
           /* Transmission request Error */
          Error_Handler();
       }
-			delay(1000);
+			HAL_Delay(1);
 	//		printf("locate %d\n", location);
 
 			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, send_message_locate, &TxMailbox) != HAL_OK)
@@ -417,14 +416,14 @@ void servo_locate_mode_set(uint8_t id, int32_t location, int32_t speed)
           /* Transmission request Error */
          Error_Handler();
       }
-			delay(1000);
+			HAL_Delay(1);
 			
 			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, send_message_control, &TxMailbox) != HAL_OK)
       {
           /* Transmission request Error */
          Error_Handler();
       }
-			delay(1000);
+			HAL_Delay(1);
 }
 
 
